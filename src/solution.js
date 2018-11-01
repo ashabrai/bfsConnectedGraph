@@ -2,32 +2,31 @@
 
  const Queue = require('queue-fifo'); // eslint-disable-line
 
-module.exports = function connectedGraph(graph, startVertex){
-    const queue = new Queue;
-    const visitedVertex = new Set();
-    let isConnected = false;
+module.exports = (graph, startVertex) => {
+  const queue = new Queue();
+  const visitedVertex = new Set();
 
-    queue.enqueue(startVertex);
-    visitedVertex.add(startVertex);
+  queue.enqueue(startVertex);
+  visitedVertex.addVertex(startVertex);
 
-    while(queue.size > 0){
-        const currentVertex = queue.dequeue();
-        const neighbors = graph.getNeighbors(currentVertex);
+  while (queue.size() > 0) {
+    const currentVertex = queue.dequeue();
 
-        for(let neighbor of neighbors){
-            const neighborVertex = neighbor.vertex;
+    const neighbors = graph.getNeighbors(currentVertex);
 
-            if(vistedVertex.has(neighborVertex)){
-                continue; // eslint-disable-line
-            }
-            else{
-                vistedVertex.add(currentVertex);
-            }
-            queue.enqueue(neighborVertex);
-        }
+      for (let neighbor of neighbors) { // eslint-disable-line
+      const neighborVertex = neighbor.vertex;
+
+      if (visitedVertex.has(neighborVertex)) {
+              continue; // eslint-disable-line
+      } else {
+        visitedVertex.addVertex(currentVertex);
+      }
+      queue.enqueue(neighborVertex);
     }
-    if(graph._adjacencyList.size === visitedVertex.size){
-        isConnected = true;
+    if (graph._adjacencyList.size === visitedVertex.size) {
+      return true;
     }
-    return isConnected
+  }
+  return null;
 };
