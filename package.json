@@ -1,0 +1,31 @@
+{
+  "name": "bfsconnectedgraph",
+  "version": "1.0.0",
+  "description": "bfs",
+  "main": "main.js",
+  "scripts": {
+    "test": "eslint . && jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "eslint-plugin-dependencies": "^2.4.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0",
+    "queue-fifo": "^0.2.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashabrai/bfsConnectedGraph.git"
+  },
+  "author": "Ashabrai Frauen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashabrai/bfsConnectedGraph/issues"
+  },
+  "homepage": "https://github.com/ashabrai/bfsConnectedGraph#readme",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
